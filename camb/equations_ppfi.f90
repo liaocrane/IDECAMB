@@ -2945,7 +2945,7 @@
         S0 = grhov_t*(1+w_eff)*(vT+sigma)*k + S0/EV%kf(1)  
         S0 = S0/2._dl/k2
         ckH=c_Gamma_ppf*k/adotoa
-        Gammadot=S0/(ckH*ckH+1)-(adotoa-gC1/grhov_t)*(ckH*ckH+1)*Gamma
+        Gammadot=(S0+gC1*Gamma/grhov_t)/(ckH*ckH+1)-(ckH*ckH+1)*adotoa*Gamma
         ayprime(EV%w_ix)=Gammadot
         if (ckH*ckH.gt.3.d1) then
             Gamma=0
